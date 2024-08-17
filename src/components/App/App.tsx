@@ -25,7 +25,7 @@ function App() {
     setTopic(newTopic);
   };
 
-  const handleLoadMore = ():void => {
+  const handleLoadMore = (): void => {
     setPage(page + 1);
   };
 

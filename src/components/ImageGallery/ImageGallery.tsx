@@ -4,10 +4,13 @@ import { ImageDataType } from "../ImageCard/Image.types";
 
 type ImageGalleryProps = {
   items: ImageDataType[];
-  onModalOpen: (item: { urls: { small: string; regular: string }; alt_description: string }) => void;
+  onModalOpen: (item: ImageDataType) => void;
 };
 
-export default function ImageGallery({ items, onModalOpen }: ImageGalleryProps) {
+export default function ImageGallery({
+  items,
+  onModalOpen,
+}: ImageGalleryProps) {
   return (
     <ul className={css.gallery}>
       {items.map((item) => (

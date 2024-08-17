@@ -1,17 +1,19 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
+import { ImageDataType } from "../ImageCard/Image.types";
 Modal.setAppElement("#root");
 
 type ModalProps = {
-  item: {
-    urls: { small: string; regular: string };
-    alt_description: string;
-  } | null;
+  item: ImageDataType | null;
   isOpen: boolean;
   onRequestClose: () => void;
 };
 
-export default function ImageModal({ item, isOpen, onRequestClose }: ModalProps) {
+export default function ImageModal({
+  item,
+  isOpen,
+  onRequestClose,
+}: ModalProps) {
   if (!item) {
     return null;
   }

@@ -3,7 +3,7 @@ import { ImageDataType } from "../ImageCard/Image.types";
 
 type ImageCardProps = {
   item: ImageDataType;
-  onModalOpen: (item: { urls: { small: string; regular: string }; alt_description: string }) => void;
+  onModalOpen: (item: ImageDataType) => void;
 };
 
 export default function ImageCard({ item, onModalOpen }: ImageCardProps) {
@@ -15,9 +15,7 @@ export default function ImageCard({ item, onModalOpen }: ImageCardProps) {
         className={css.img}
         src={urls.small}
         alt={alt_description}
-        onClick={() =>
-          onModalOpen({ urls: { small: urls.small, regular: urls.regular }, alt_description: alt_description || "" })
-        }
+        onClick={() => onModalOpen(item)}
       />
     </div>
   );
