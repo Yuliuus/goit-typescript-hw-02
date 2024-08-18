@@ -29,3 +29,4 @@ export default tseslint.config(
     },
   },
 )
+export { parseAst, parseAstAsync } from 'rollup/parseAst';
